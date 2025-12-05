@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Títulos - FC Barcelona</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Títulos - FC Barcelona</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <img src="imgs/logo-barca.png" class="logo">
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="plantel.html">Plantel</a></li>
-            <li><a href="historia.html">História</a></li>
-            <li><a class="ativo">Títulos</a></li>
-        </ul>
-    </nav>
-</header>
+<div id="header"></div>
 
-<section class="conteudo">
-    <h1>Títulos</h1>
-    <ul>
-        <li>5x Liga dos Campeões</li>
-        <li>27x La Liga</li>
-        <li>31x Copa del Rey</li>
-        <li>3x Mundial de Clubes</li>
-    </ul>
-</section>
+<main class="titulos-container">
+  <h1>Títulos do FC Barcelona</h1>
+  <section class="seccao-titulos">
+    <h2>Nacionais</h2>
+    <div class="titulos-grid">
+      <div class="titulo-card">
+        <img src="images/titulos/laliga.jpg" alt="La Liga">
+        <h3>La Liga</h3>
+        <p>26 Títulos</p>
+      </div>
+      <div class="titulo-card">
+        <img src="images/titulos/copa_del_rey.jpg" alt="Taça do Rei">
+        <h3>Taça do Rei</h3>
+        <p>31 Títulos</p>
+      </div>
+      <div class="titulo-card">
+        <img src="images/titulos/supercopa.jpg" alt="Supertaça de Espanha">
+        <h3>Supertaça de Espanha</h3>
+        <p>14 Títulos</p>
+      </div>
+    </div>
+  </section>
+  <section class="seccao-titulos">
+    <h2>Internacionais</h2>
+    <div class="titulos-grid">
+      <div class="titulo-card">
+        <img src="images/titulos/championsleague.jpg" alt="Champions League">
+        <h3>Champions League</h3>
+        <p>5 Títulos</p>
+      </div>
+      <div class="titulo-card">
+        <img src="images/titulos/mundial_clubes.png" alt="Mundial de Clubes">
+        <h3>Mundial de Clubes</h3>
+        <p>3 Títulos</p>
+      </div>
+      <div class="titulo-card">
+        <img src="images/titulos/supertacauefa.jpg" alt="Supertaça UEFA">
+        <h3>Supertaça UEFA</h3>
+        <p>5 Títulos</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-<footer>
-    <p>&copy; 2025 — FC Barcelona</p>
-</footer>
+<div id="footer"></div>
+
+<script>
+  fetch("./includes/header.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("./includes/footer.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
 
 </body>
 </html>
+

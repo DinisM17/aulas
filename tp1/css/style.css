@@ -177,82 +177,68 @@
     opacity: 0.7;
 }
 
-
-.noticias {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
+.destaques {
+  max-width: 1200px;
+  margin: 50px auto 80px auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
-.noticias h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    color: var(--azul-escuro);
-    text-align: center;
+.destaques h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #800040; /* cor Barça */
 }
 
-.noticias-container {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
+.destaques-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.card-noticia {
-    background: white;
-    width: 300px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-    overflow: hidden;
-    transition: 0.3s;
+.player-card.destaque {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  width: 280px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.card-noticia:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+.player-card.destaque:hover {
+  transform: scale(1.05);
 }
 
-.card-noticia img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.player-card.destaque img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
 }
 
-.card-noticia h3 {
-    padding: 15px;
-    font-size: 20px;
-    color: var(--azul-barca);
+.player-card.destaque h3 {
+  color: #000;
+  margin: 15px 0 5px 0;
+  font-size: 1.25rem;
 }
 
-.card-noticia p {
-    padding: 0 15px 15px 15px;
-    color: #333;
+.player-card.destaque p {
+  color: #444;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.card-noticia .btn {
-    display: block;
-    text-align: center;
-    background: var(--vermelho-barca);
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    transition: 0.2s;
-}
 
-.card-noticia .btn:hover {
-    background: var(--azul-barca);
-}
-
-/* ------- PLANTEL ------- */
 
 .plantel {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 80px auto 40px auto;
     padding: 0 20px;
 }
+
 
 .plantel h1 {
     text-align: center;
@@ -291,9 +277,17 @@
 
 .player-card img {
     width: 100%;
-    height: 180px;
+    height: 220px;     
     object-fit: cover;
+    object-position: center 30%;
+    border-bottom: 1px solid #ddd;
 }
+
+
+.player-card.guarda-redes img {
+    object-position: center 20%;
+}
+
 
 .player-card h3 {
     margin-top: 10px;
@@ -305,3 +299,97 @@
     margin-top: 5px;
     color: #444;
 }
+.historia-container {
+  max-width: 900px;
+  margin: 100px auto 80px auto;
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.7;
+}
+
+
+    .historia-container h1 {
+      color: #800040;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .historia-container p {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .titulos-container {
+      max-width: 1000px;
+      margin: 80px auto 80px auto;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+
+    .titulos-container h1 {
+      text-align: center;
+      color: #800040;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .seccao-titulos {
+      margin-bottom: 50px;
+    }
+
+    .seccao-titulos h2 {
+      color: #800040;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .titulos-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .titulo-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+      width: 250px;
+      text-align: center;
+      padding-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .titulo-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .titulo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    }
+
+
+    .titulo-card h3 {
+      margin: 15px 0 5px 0;
+      color: #000;
+      font-size: 1.2rem;
+    }
+
+    .titulo-card p {
+      margin: 0;
+      font-weight: 600;
+      color: #555;
+    }

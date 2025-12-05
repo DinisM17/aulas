@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História - FC Barcelona</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>História - FC Barcelona</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<header>
-    <img src="imgs/logo-barca.png" class="logo">
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="plantel.html">Plantel</a></li>
-            <li><a class="ativo">História</a></li>
-            <li><a href="titulos.html">Títulos</a></li>
-        </ul>
-    </nav>
-</header>
+<div id="header"></div>
 
-<section class="conteudo">
-    <h1>História do Clube</h1>
-    <p>Fundado em 1899 por Joan Gamper, o FC Barcelona tornou-se um símbolo da Catalunha e do futebol mundial.</p>
-    <img src="imgs/equipa.jpg" alt="Equipa" class="imagem-centro">
-</section>
+<main class="historia-container">
+  <h1>História do FC Barcelona</h1>
 
-<footer>
-    <p>&copy; 2025 — FC Barcelona</p>
-</footer>
+  <p>
+    Fundado a 29 de novembro de 1899 por um grupo de futebolistas suíços, ingleses e espanhóis liderados por Joan Gamper, o FC Barcelona rapidamente se tornou um símbolo de identidade e cultura catalã. Ao longo dos seus mais de 120 anos de existência, o clube desenvolveu uma filosofia própria, centrada na formação de jogadores e no futebol ofensivo, que lhe permitiu conquistar um lugar de destaque no futebol mundial.
+  </p>
+
+  <p>
+    O Barcelona é muito mais que um clube — é um movimento social, cultural e político que representa a autonomia e o orgulho da Catalunha. A sua famosa frase “Més que un club” (“Mais que um clube”) reflete esta ligação profunda entre o clube e a sua região.
+  </p>
+
+  <p>
+    No plano desportivo, o clube já conquistou dezenas de títulos nacionais e internacionais, incluindo múltiplas Ligas espanholas, Taças do Rei, Liga dos Campeões da UEFA e Mundial de Clubes. Figuras lendárias como Johan Cruyff, Diego Maradona, Ronaldinho, e mais recentemente Lionel Messi, ajudaram a moldar a identidade e o sucesso do clube.
+  </p>
+
+  <p>
+    A academia La Masia, uma das mais famosas do mundo, é responsável pela formação de muitos talentos que brilharam no clube e no futebol mundial. O FC Barcelona continua a investir fortemente na sua equipa jovem, garantindo a continuidade da sua filosofia e a paixão pelo jogo bonito.
+  </p>
+
+  <p>
+    Atualmente, o clube mantém-se como um dos maiores e mais influentes do mundo, com uma base global de adeptos que celebram a sua história, cultura e ambição de sucesso. O Camp Nou, estádio icónico do clube, é um verdadeiro santuário para os fãs do futebol, onde a magia do Barça continua a ser escrita.
+  </p>
+</main>
+
+<div id="footer"></div>
+
+<script>
+  fetch("./includes/header.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("./includes/footer.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
 
 </body>
 </html>
