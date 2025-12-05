@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Entradas</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #242424;
+      color: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #d4af37;
+    }
+    .logo a {
+        color: #d4af37;
+    }
+    .logo a:hover {
+        color: #d4af37;
+      border-bottom: 2px solid #d4af37;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d4af37;
+      font-weight: bolder;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 2px solid #d4af37;
+    }
+
+    table {
+      width: 80%;
+      margin: 3rem auto;
+      border-collapse: collapse;
+      color: #f1f1f1;
+      background-color: #2b2b2b;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #b8860b;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #323232;
+    }
+
+    tr:hover {
+      background-color: #3a3a3a;
+      transition: background 0.3s ease;
+    }
+
+    td img {
+      width: 80px;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+
+      table {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><a href="index.html">MENU</a></div>
+    <ul class="nav-links">
+      <li><a href="entradas.html">Entradas</a></li>
+      <li><a href="carnes.html">Carnes</a></li>
+      <li><a href="reservas.html">Reservas</a></li>
+    </ul>
+  </nav>
+
+  <table>
+    <tr>
+      <th>Prato</th>
+      <th>Preço</th>
+      <th>Imagem</th>
+    </tr>
+    <tr>
+      <td>Rissóis de Camarão</td>
+      <td>2 €</td>
+      <td><img src="rissoescam.png" alt="Rissóis de Camarão"></td>
+    </tr>
+    <tr>
+      <td>Bruschetta de Tomate</td>
+      <td>3.50 €</td>
+      <td><img src="tomate.png" alt="Bruschetta"></td>
+    </tr>
+    <tr>
+      <td>Tábua de Queijos e Enchidos</td>
+      <td>8.00 €</td>
+      <td><img src="queijos.png" alt="Tábua de Queijos e Enchidos"></td>
+    </tr>
+
+    <tr>
+      <td>Pão de Alho com Queijo</td>
+      <td>3.00 €</td>
+      <td><img src="paoqueijo.png" alt="Pão de Alho com Queijo"></td>
+    </tr>
+
+    <tr>
+      <td>Amêijoas à Bulhão Pato</td>
+      <td>9.50 €</td>
+      <td><img src="ameijoas.png" alt="Amêijoas à Bulhão Pato"></td>
+    </tr>
+
+    <tr>
+      <td>Salada Caprese</td>
+      <td>4.50 €</td>
+      <td><img src="crapese.png" alt="Salada Caprese"></td>
+    </tr>
+
+    <tr>
+      <td>Creme de Legumes</td>
+      <td>2.80 €</td>
+      <td><img src="cremelegumes.png" alt="Creme de Legumes"></td>
+    </tr>
+
+    <tr>
+      <td>Carpaccio de Novilho</td>
+      <td>7.50 €</td>
+      <td><img src="carpaccio.png" alt="Carpaccio de Novilho"></td>
+    </tr>
+  </table>
+</body>
+</html>

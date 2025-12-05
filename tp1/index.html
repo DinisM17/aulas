@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona | Início</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<section class="banner">
+    <div class="banner-texto">
+        <h2>“Més que un club”</h2>
+        <p>O orgulho da Catalunha e um dos maiores clubes do mundo.</p>
+    </div>
+</section>
+
+<section class="conteudo">
+    <h2>Bem-vindo ao Universo Blaugrana</h2>
+    <p>Descobre mais sobre a história, os jogadores, os títulos e a identidade única do FC Barcelona.</p>
+</section>
+<section class="noticias">
+    <h2>Últimas Notícias</h2>
+
+    <div class="noticias-container">
+
+        <div class="card-noticia">
+            <img src="imgs/noticia1.jpg" alt="Notícia 1">
+            <h3>Barcelona vence clássico no Camp Nou</h3>
+            <p>O Barça garantiu uma vitória importante num jogo emocionante que animou os adeptos.</p>
+            <a href="#" class="btn">Ler mais</a>
+        </div>
+
+        <div class="card-noticia">
+            <img src="imgs/noticia2.jpg" alt="Notícia 2">
+            <h3>Nova contratação chega ao clube</h3>
+            <p>O reforço promete trazer mais criatividade ao meio-campo para a nova temporada.</p>
+            <a href="#" class="btn">Ler mais</a>
+        </div>
+
+        <div class="card-noticia">
+            <img src="imgs/noticia3.jpg" alt="Notícia 3">
+            <h3>Camp Nou avança com remodelações</h3>
+            <p>O novo estádio está a ganhar forma e será um dos mais modernos do mundo.</p>
+            <a href="#" class="btn">Ler mais</a>
+        </div>
+
+    </div>
+</section>
+<div id="footer"></div>
+
+<script>
+    fetch("./includes/header.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("./includes/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+</body>
+</html>
+

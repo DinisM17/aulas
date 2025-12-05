@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas | Restaurante</title>
+  <style>
+    /* Reset e base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+      min-height: 100vh;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #242424;
+      color: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #d4af37;
+    }
+    
+    .logo a {
+        color: #d4af37;
+    }
+    .logo a:hover {
+        color: #d4af37;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d4af37;
+      font-weight: bolder;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a:hover {
+      border-bottom: 2px solid #d4af37;
+    }
+
+    /* CONTEÚDO DA PÁGINA */
+    .reserva-container {
+      background-color: #242424;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      max-width: 500px;
+      width: 90%;
+      margin: 4rem auto;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #f8f8f8;
+      margin-bottom: 1.8rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: 500;
+      color: #d4d4d4;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 6px;
+      border: 1px solid #3a3a3a;
+      background-color: #2b2b2b;
+      color: #f8f8f8;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #999;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #b8860b;
+      box-shadow: 0 0 6px rgba(184, 134, 11, 0.5);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background-color: #b8860b;
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background-color: #d4af37;
+      transform: translateY(-2px);
+    }
+
+    button:focus {
+      outline: 2px solid #d4af37;
+      outline-offset: 3px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+
+      .reserva-container {
+        padding: 1.8rem;
+        margin-top: 2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><a href="index.html">MENU</a></div>
+    <ul class="nav-links">
+      <li><a href="entradas.html">Entradas</a></li>
+      <li><a href="carnes.html">Carnes</a></li>
+      <li><a href="reservas.html">Reservas</a></li>
+    </ul>
+  </nav>
+
+  <div class="reserva-container">
+    <h2>Reserva o Teu Lugar</h2>
+    <form action="#" method="post">
+      <div>
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
+      </div>
+
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+      </div>
+
+      <div>
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(+351) 912 345 678" required>
+      </div>
+
+      <div>
+        <label for="data">Data da Reserva</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+
+      <div>
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required>
+      </div>
+
+      <div>
+        <label for="pessoas">Número de Pessoas</label>
+        <select id="pessoas" name="pessoas" required>
+          <option value="">Seleciona...</option>
+          <option value="1">1 Pessoa</option>
+          <option value="2">2 Pessoas</option>
+          <option value="3">3 Pessoas</option>
+          <option value="4">4 Pessoas</option>
+          <option value="5+">5 ou mais</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="mensagem">Observações</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Algum pedido especial?"></textarea>
+      </div>
+
+      <button type="submit">Enviar Reserva</button>
+    </form>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantel - FC Barcelona</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<section class="plantel">
+    <h1>Plantel 2025/2026</h1>
+
+    <h2 class="secao-titulo">Guarda-redes</h2>
+        <div class="player-card">
+            <img src="images/jogadores/joangarcia.jpg" alt="Joan Garcia">
+            <h3>Joan García</h3>
+            <p>Guarda-redes</p>
+        </div>
+
+        <div class="player-card">
+            <img src="images/jogadores/szczesny.jpg" alt="Szczesny">
+            <h3>Wojciech Szczęsny</h3>
+            <p>Guarda-redes</p>
+        </div>
+    </div>
+
+    
+    <h2 class="secao-titulo">Defesas</h2>
+    <div class="plantel-grid">
+        <div class="player-card"><img src="images/jogadores/balde.jpg"><h3>Alejandro Balde</h3><p>Defesa</p></div>
+        <div class="player-card"><img src="images/jogadores/araujo.jpg"><h3>Ronald Araújo</h3><p>Defesa</p></div>
+        <div class="player-card"><img src="images/jogadores/cubarsi.jpg"><h3>Pau Cubarsí</h3><p>Defesa</p></div>
+        <div class="player-card"><img src="images/jogadores/kounde.jpg"><h3>Jules Koundé</h3><p>Defesa</p></div>
+    </div>
+
+
+    <h2 class="secao-titulo">Médios</h2>
+    <div class="plantel-grid">
+        <div class="player-card"><img src="images/jogadores/pedri.jpg"><h3>Pedri</h3><p>Médio</p></div>
+        <div class="player-card"><img src="images/jogadores/fermin.jpg"><h3>Fermín López</h3><p>Médio</p></div>
+        <div class="player-card"><img src="images/jogadores/dejong.jpg"><h3>Frenkie de Jong</h3><p>Médio</p></div>
+    </div>
+
+
+    <h2 class="secao-titulo">Avançados</h2>
+    <div class="plantel-grid">
+        <div class="player-card"><img src="images/jogadores/lewandowski.jpg"><h3>Robert Lewandowski</h3><p>Avançado</p></div>
+        <div class="player-card"><img src="images/jogadores/yamal.jpg"><h3>Lamine Yamal</h3><p>Extremo</p></div>
+        <div class="player-card"><img src="images/jogadores/raphinha.jpg"><h3>Raphinha</h3><p>Extremo</p></div>
+        <div class="player-card"><img src="images/jogadores/rashford.jpg"><h3>Marcus Rashford</h3><p>Extremo</p></div>
+    </div>
+</section>
+
+
+<div id="footer"></div>
+
+<script>
+    fetch("./includes/header.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("./includes/footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+</body>
+</html>

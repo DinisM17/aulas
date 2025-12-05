@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+:root {
+    --azul-escuro: #0A1A44;
+    --azul-barca: #004D98;
+    --vermelho-barca: #A50044;
+    --dourado: #F9B208;
+    --branco: #FFFFFF;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, var(--azul-barca), var(--vermelho-barca));
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 55px;
+}
+
+.logo-area h1 {
+    color: var(--dourado);
+    font-size: 24px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+
+
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--dourado);
+    transition: 0.3s;
+}
+
+.nav ul li a:hover::after,
+.nav ul li a.ativo::after {
+    width: 100%;
+}
+
+.banner {
+    background: url('../images/campnou.jpg') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 120px;
+
+    position: relative;
+}
+
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 26, 68, 0.6);
+}
+
+.banner-texto {
+    position: relative;
+    color: white;
+    text-align: center;
+    max-width: 700px;
+}
+
+.banner-texto h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-texto p {
+    font-size: 18px;
+}
+
+.conteudo {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #FFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.conteudo h2 {
+    font-size: 32px;
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+}
+
+.conteudo p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+.footer {
+    background: var(--azul-escuro);
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+.noticias {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.noticias h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: var(--azul-escuro);
+    text-align: center;
+}
+
+.noticias-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-noticia {
+    background: white;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-noticia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+}
+
+.card-noticia img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-noticia h3 {
+    padding: 15px;
+    font-size: 20px;
+    color: var(--azul-barca);
+}
+
+.card-noticia p {
+    padding: 0 15px 15px 15px;
+    color: #333;
+}
+
+.card-noticia .btn {
+    display: block;
+    text-align: center;
+    background: var(--vermelho-barca);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: 0.2s;
+}
+
+.card-noticia .btn:hover {
+    background: var(--azul-barca);
+}
+
+/* ------- PLANTEL ------- */
+
+.plantel {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.plantel h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--azul-escuro);
+    font-size: 40px;
+}
+
+.secao-titulo {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--vermelho-barca);
+}
+
+.plantel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.player-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.player-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.player-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--azul-barca);
+}
+
+.player-card p {
+    margin-top: 5px;
+    color: #444;
+}
