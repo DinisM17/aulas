@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Clima</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      transition: background 0.6s ease;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+    }
+
+    .container {
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    button {
+      border: none;
+      background: #4a6cf7;
+      color: white;
+      cursor: pointer;
+    }
+
+    .result img {
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🌍 Clima</h2>
+    <input type="text" id="city" placeholder="Digite a cidade">
+    <button onclick="getWeather()">Buscar</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    async function getWeather() {
+      const cityInput = document.getElementById("city").value.trim();
+
+      if (!cityInput) {
+        document.getElementById("result").innerText = "Digite o nome da cidade.";
+        return;
+      }
+
+      const city = encodeURIComponent(cityInput);
+      const apiKey = "0e9a102dcdeeca511457ed7c47911fb2";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!response.ok) {
+          document.getElementById("result").innerText = data.message;
+          return;
+        }
+
+        // Ícone
+        const icon = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+        // Tipo de clima principal
+        const weatherMain = data.weather[0].main;
+
+        // Mudança de fundo
+        setBackground(weatherMain);
+
+        document.getElementById("result").innerHTML = `
+          <strong>${data.name}</strong><br>
+          <img src="${iconUrl}" alt="Clima"><br>
+          🌡️ ${data.main.temp} °C<br>
+          ☁️ ${data.weather[0].description}<br>
+          💧 Humidade: ${data.main.humidity}%
+        `;
+      } catch (error) {
+        document.getElementById("result").innerText = "Erro de conexão.";
+      }
+    }
+
+    function setBackground(weather) {
+      const body = document.body;
+
+      switch (weather) {
+        case "Clear":
+          body.style.background = "linear-gradient(135deg, #fceabb, #f8b500)";
+          break;
+        case "Clouds":
+          body.style.background = "linear-gradient(135deg, #d7d2cc, #304352)";
+          break;
+        case "Rain":
+        case "Drizzle":
+          body.style.background = "linear-gradient(135deg, #4b79a1, #283e51)";
+          break;
+        case "Thunderstorm":
+          body.style.background = "linear-gradient(135deg, #232526, #414345)";
+          break;
+        case "Snow":
+          body.style.background = "linear-gradient(135deg, #e6dada, #274046)";
+          break;
+        default:
+          body.style.background = "linear-gradient(135deg, #74ebd5, #9face6)";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
